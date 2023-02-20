@@ -8,6 +8,6 @@ router.register(r'results', ResultViewSet)
 
 urlpatterns = [
   
-    path('api/', include(router.urls)),
+    path('', include(router.urls)),
    
 ]

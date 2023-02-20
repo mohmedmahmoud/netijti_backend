@@ -13,7 +13,7 @@ from models import Result, Sector
 data = json.loads(json_data)
 
 # Create a new Result instance for each object in the JSON array
-sector = Sector.objects.get(name='Bac 2022')
+sector = Sector.objects.get(name='BAC 2022')
 for obj in data:
     result = Result(
         

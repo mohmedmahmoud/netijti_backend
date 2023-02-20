@@ -5,16 +5,19 @@ from decimal import Decimal
 
 
 
-
+# Ce modèle stocke les informations sur les secteurs, les filieres  ...
 class Sector(models.Model):
     name = models.CharField(max_length=50)
-    description = models.TextField()
+    nameAr= models.CharField(max_length=50, null=True)
+    description = models.TextField(null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name
 
 
+
+# Ce modèle stocke les informations sur les résultats
 class Result(models.Model):
     number = models.CharField(max_length=10)
     
@@ -23,11 +26,13 @@ class Result(models.Model):
     max_digits=5, decimal_places=2,
     validators=[MinValueValidator(Decimal('0.00')), MaxValueValidator(Decimal('20.00'))]
     )
+    # Le secteur associé au résultat.
     sector = models.ForeignKey(Sector, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
-    metadata = models.JSONField(default=dict)
+    # Des données supplémentaires associées au résultat, sous forme de dictionnaire.
+    metadata = models.JSONField(default=dict, null=True)
     
     def __str__(self):
-        return self.name+" "+self.score;
+        return f"{self.name} {str(self.score)}"
 
 
