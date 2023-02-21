@@ -19,8 +19,7 @@ class Sector(models.Model):
 
 # Ce modèle stocke les informations sur les résultats
 class Result(models.Model):
-    number = models.CharField(max_length=10)
-    
+    number = models.CharField(max_length=10, primary_key=True)
     name = models.CharField(max_length=50)
     score = models.DecimalField(
     max_digits=5, decimal_places=2,
