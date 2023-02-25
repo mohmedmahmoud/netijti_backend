@@ -1,3 +1,5 @@
+import datetime
+from django.utils import timezone
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from decimal import Decimal
@@ -33,5 +35,10 @@ class Result(models.Model):
     
     def __str__(self):
         return f"{self.name} {str(self.score)}"
+    # def save(self, *args, **kwargs):
+    #     for key, value in self.metadata.items():
+    #         if isinstance(value, datetime.datetime):
+    #             self.metadata[key] = timezone.make_aware(value).isoformat()
+    #     super().save(*args, **kwargs)    
 
 
