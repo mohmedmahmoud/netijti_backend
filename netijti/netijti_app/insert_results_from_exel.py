@@ -16,7 +16,7 @@ for row in worksheet.iter_rows(min_row=2, values_only=True):
         score=row[6],
         sector=sector,
         metadata=row,
-        created_at=datetime.datetime.now()  
+        created_at=datetime.datetime.now()  ,
     )
     result.save()
 
