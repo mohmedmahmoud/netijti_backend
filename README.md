@@ -2,7 +2,7 @@
 project django  s1
 
 Netijti
-Netijti est une application mobile développée en utilisant le framework Django et le framework REST API Django Rest Framework. Cette application permet aux utilisateurs de saisir des informations sur les résultats des matchs de football et d'afficher les statistiques des joueurs et des équipes.
+Netijti est une application mobile développée en utilisant le framework Django et le framework REST API Django Rest Framework. Notre application affiche les résultats des étudiants de manière claire et concise, vous permettant de visualiser facilement leur performance académique
 
 # Technologies utilisées
 
